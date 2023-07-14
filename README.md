@@ -13,6 +13,14 @@ Download the Reconstructed Precipitation and Temperature CFSv2 Forecasts for 201
 
 To create the data used in the notebooks, execute the Jupyter notebook **create_data_matrices2**, which calls the file .py **experiments_util2**. That will create an HDF file that contains the lagged data (you can choose the number of days) used for the predictions. Please set the target_horizon to "56w" and gt_id to "contest_tmp2m
 
+For the soil moisture data, download it from _https://zenodo.org/record/7072512#.ZFj3h-zMK3J_, shrink it to 27;49 latitudes and -124;-94 longitudes and add it in the folder **data/new features**. \
+
+For CSIF, go on _https://osf.io/8xqy6/_ and download every files with this format _OCO2.SIF.clear.inst.2000001.v2.nc_ and add it in **data/new features**. \
+
+For El Nino, just execute the code related to this feature. 
+
 ### Methods
 
-The main analysis have been conducted on soil moisture and elevation features addition. You can execute the Jupyter Notebook **cleaned xgboost CASM and elevation**, which calls the file .py **xgboost functional**.   
+The main analysis have been conducted on soil moisture and elevation features addition. You can execute the Jupyter Notebook **cleaned xgboost CASM and elevation**, which calls the file .py **xgboost functional**.  \
+In this notebook, you can visualize the seasonal shap values for all the features used in the model with the function **shap_geographical_analysis**. For the other functions, they're mainly focused on soil moisture and elevation. They can be easily adapted to other features later.\ 
+For example, you can find the geographical skills improvements with CSIF addition in the Jupyter notebook **CSIF analysis**. In the Jupyter Notebook **tentative xgboost**, you have the model with El Nino feature.
